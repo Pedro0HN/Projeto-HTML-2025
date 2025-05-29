@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Estilo & Corte - Preços e Contato</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <header class="main-header">
+            <h1>Barbearia Estilo & Corte</h1>
+            <h3>Transforme seu visual, inspire confiança!</h3>
+        </header>
+
+        <section class="content-section">
+            <h2>Valores:</h2>
+            <ul class="price-list">
+                <li>Corte social: <strong>25R$</strong></li>
+                <li>Degrade: <strong>30R$</strong></li>
+                <li>Sobrancelha: <strong>5R$</strong></li>
+                <li>Corte Infantil: <strong>15R$</strong></li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Nosso Horário de Funcionamento</h2>
+            <ul class="hours-list">
+                <li>Segunda á Sábado das:</li>
+                <li>8:00 às 19:00</li>
+            </ul>
+        </section>
+
+        <section class="content-section contact-section">
+            <h3>Se Interessou? Entre em contato e venha ser feliz!</h3>
+            <h2>Nosso Contato</h2>
+            <div class="contact-details">
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/SEUNUMERODOWHATSAPP" target="_blank">Número do Barbeiro
+                <p><strong>Email:</strong> <a href="mailto:barbearia.teste@gmail.com" target="_blank">Barbearia.teste@gmail.com</a></p>
+                <p><strong>Telefone:</strong> (83) 99999-9999</p>
+            </div>
+
+            <!-- BOTÃO DE AGENDAMENTO VIA WHATSAPP -->
+            <div class="whatsapp-button-container">
+                <a href="https://wa.me/SEUNUMERODOWHATSAPP?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." class="btn btn-whatsapp" target="_blank">
+                    Agendar via WhatsApp
+                </a>
+            </div>
+            <!-- FIM DO BOTÃO DE AGENDAMENTO VIA WHATSAPP -->
+
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© <span id="current-year"></span> Barbearia Estilo & Corte.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
