@@ -110,3 +110,238 @@ footer {
     color: #fff;
     margin-top: 40px;
 }
+
+.cortes-lista {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding-left: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cortes-lista li {
+    text-align: center;
+    max-width: 150px;
+}
+
+.cortes-lista img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+}
+
+.cortes-lista p {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #222;
+}
+
+section#opiniao {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+section#opiniao h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+section#opiniao p {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+section#opiniao form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+section#opiniao form div {
+    margin-bottom: 20px;
+}
+
+section#opiniao label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+section#opiniao input[type="text"],
+section#opiniao input[type="email"],
+section#opiniao textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+section#opiniao textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+section#opiniao button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+section#opiniao button[type="submit"]:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    background-color: #333;
+    color: #f9f9f9;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Estilos para a Seção de Avaliação */
+#avaliacao {
+    background-color: #f9f9f9; /* Fundo levemente cinza para a seção */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#avaliacao h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+}
+
+#avaliacao p {
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* Estilos do Formulário de Avaliação */
+.form-avaliacao {
+    max-width: 600px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.form-grupo {
+    margin-bottom: 20px; /* Espaço entre os grupos de campo */
+    text-align: left; /* Alinha os labels e inputs à esquerda */
+}
+
+.form-grupo label {
+    display: block; /* Cada label em uma nova linha */
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="email"],
+.form-grupo textarea {
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding não aumente a largura total */
+}
+
+.form-grupo input[type="text"]:focus,
+.form-grupo input[type="email"]:focus,
+.form-grupo textarea:focus {
+    border-color: #007bff; /* Cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão do navegador */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Sombra suave ao focar */
+}
+
+/* Estilos para as estrelas de avaliação */
+.avaliacao-estrelas {
+    display: flex; /* Para alinhar o label e as estrelas */
+    align-items: center;
+    gap: 10px; /* Espaço entre o label e as estrelas */
+}
+
+.estrelas {
+    display: flex;
+    flex-direction: row-reverse; /* Inverte a ordem para que a 5ª estrela seja a primeira visualmente */
+    justify-content: flex-start; /* Alinha as estrelas à esquerda */
+    direction: ltr; /* Garante que o texto seja da esquerda para a direita */
+}
+
+.estrelas input[type="radio"] {
+    display: none; /* Esconde os radio buttons padrão */
+}
+
+.estrelas label {
+    font-size: 2em; /* Tamanho das estrelas */
+    color: #ccc; /* Cor padrão da estrela (cinza) */
+    cursor: pointer;
+    margin: 0 2px; /* Pequeno espaçamento entre as estrelas */
+    transition: color 0.3s ease; /* Transição suave na cor */
+    display: inline-block;
+    padding: 0; /* Remove padding padrão de label */
+    margin-bottom: 0; /* Remove margin-bottom padrão de label */
+}
+
+/* Preenche as estrelas quando o mouse passa por elas ou quando são selecionadas */
+.estrelas label:hover,
+.estrelas label:hover ~ label,
+.estrelas input[type="radio"]:checked ~ label {
+    color: #ffc107; /* Cor da estrela selecionada ou ao passar o mouse (amarelo ouro) */
+}
+
+/* Cor das estrelas já selecionadas e das anteriores, ao passar o mouse */
+.estrelas input[type="radio"]:checked + label:hover,
+.estrelas input[type="radio"]:checked ~ label:hover,
+.estrelas input[type="radio"]:checked ~ label:hover ~ label,
+.estrelas label:hover ~ input[type="radio"]:checked ~ label {
+    color: #ffc107; /* Garante que as estrelas preenchidas permaneçam amarelas */
+}
+
+
+.form-avaliacao button {
+    background-color: #007bff; /* Cor principal do botão (azul) */
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+}
+
+.form-avaliacao button:hover {
+    background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+}
