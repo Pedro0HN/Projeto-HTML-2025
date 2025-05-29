@@ -57,6 +57,35 @@
         <p>Na [Nome da Barbearia], acreditamos que cortar cabelo vai muito além de manter o visual em dia — é um momento de cuidado, estilo e autoestima. Fundada com a missão de resgatar o espírito clássico da barbearia tradicional, unimos tradição, modernidade e um atendimento de primeira para oferecer uma experiência completa a cada cliente.
         Nosso time é formado por barbeiros experientes, apaixonados pelo que fazem e atentos aos detalhes. Aqui, cada corte, barba ou acabamento é feito com precisão, respeito ao estilo pessoal e foco total na sua satisfação.</p>
     </section>
+    <section id="avaliacao">
+        <h2>Deixe Sua Avaliação</h2>
+        <p>Sua opinião é muito importante para nós! Ajude-nos a melhorar.</p>
+        <form action="#" method="POST" class="form-avaliacao">
+            <div class="form-grupo">
+                <label for="nome-avaliacao">Seu Nome:</label>
+                <input type="text" id="nome-avaliacao" name="nome_avaliacao" required>
+            </div>
+            <div class="form-grupo">
+                <label for="email-avaliacao">Seu E-mail:</label>
+                <input type="email" id="email-avaliacao" name="email_avaliacao" required>
+            </div>
+            <div class="form-grupo avaliacao-estrelas">
+                <label>Sua Avaliação:</label>
+                <div class="estrelas">
+                    <input type="radio" id="estrela5" name="avaliacao" value="5" required><label for="estrela5" title="5 estrelas"></label>
+                    <input type="radio" id="estrela4" name="avaliacao" value="4"><label for="estrela4" title="4 estrelas"></label>
+                    <input type="radio" id="estrela3" name="avaliacao" value="3"><label for="estrela3" title="3 estrelas"></label>
+                    <input type="radio" id="estrela2" name="avaliacao" value="2"><label for="estrela2" title="2 estrelas"></label>
+                    <input type="radio" id="estrela1" name="avaliacao" value="1"><label for="estrela1" title="1 estrela"></label>
+                </div>
+            </div>
+            <div class="form-grupo">
+                <label for="comentario">Comentário (Opcional):</label>
+                <textarea id="comentario" name="comentario" rows="5"></textarea>
+            </div>
+            <button type="submit">Enviar Avaliação</button>
+        </form>
+    </section>
     <!-- Rodapé -->
     <footer> <!--Quero essa parte no meio da tela-->
         <p>&copy; 2025 Barbearia Estilo & Corte.</p>
