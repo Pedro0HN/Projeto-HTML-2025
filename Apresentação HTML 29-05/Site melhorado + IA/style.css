@@ -1,0 +1,464 @@
+/* ------------------- */
+/* RESET BÁSICO E GLOBAIS */
+/* ------------------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Mantido, essencial! */
+}
+
+/* 1. Variáveis CSS (Custom Properties) para fácil customização e consistência */
+:root {
+    --primary-color: #AF8260; /* Um tom marrom/dourado, clássico de barbearias */
+    --secondary-color: #3C2A21; /* Um marrom escuro para texto ou fundos */
+    --accent-color: #E4C59E; /* Um bege claro para acentos ou fundos suaves */
+    --text-color: #333;
+    --light-text-color: #f4f4f4;
+    --background-light: #f9f9f9; /* Um pouco mais suave que o f4f4f4 original */
+    --background-dark: #222;
+    --border-color: #ddd;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para cards */
+
+    --font-primary: 'Roboto', sans-serif; /* Sugestão de fonte moderna para corpo */
+    --font-headings: 'Playfair Display', serif; /* Sugestão de fonte elegante para títulos */
+
+    --container-width: 1140px;
+    --container-padding: 20px;
+}
+
+html {
+    scroll-behavior: smooth; /* 2. Rolagem suave para links internos */
+    font-size: 100%; /* Garante que 1rem = 16px (padrão do navegador) */
+}
+
+body {
+    font-family: var(--font-primary); /* 3. Aplicando a fonte primária */
+    line-height: 1.7; /* Melhorando a legibilidade */
+    background-color: var(--background-light);
+    color: var(--text-color);
+    /* Removido o padding global do body, será aplicado nos containers */
+}
+
+/* 4. Classe Container para centralizar conteúdo */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+/* ------------------- */
+/* CABEÇALHO E NAVEGAÇÃO */
+/* ------------------- */
+.site-header {
+    background-color: var(--background-dark);
+    padding: 15px 0;
+    position: sticky; /* 5. Header fixo no topo ao rolar (opcional) */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil para destacar do conteúdo */
+}
+
+.header-container {
+    display: flex; /* 6. Usando flexbox para alinhar logo e navegação */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-family: var(--font-headings); /* 7. Fonte diferenciada para o logo */
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+nav[aria-label="Navegação principal"] ul {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Espaçamento entre os links */
+}
+
+nav[aria-label="Navegação principal"] ul li a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px; /* 8. Melhorando a área de clique */
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* 9. Transição suave */
+}
+
+nav[aria-label="Navegação principal"] ul li a:hover,
+nav[aria-label="Navegação principal"] ul li a:focus { /* 10. :focus para acessibilidade */
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+}
+
+.menu-toggle {
+    display: none; /* 11. Escondido por padrão, será mostrado em mobile */
+    background: none;
+    border: none;
+    color: var(--light-text-color);
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+
+/* ------------------- */
+/* SEÇÃO HERO (ANTIGA HOME) */
+/* ------------------- */
+.hero-section {
+    background-color: var(--secondary-color); /* 12. Cor de fundo mais escura e elegante */
+    color: var(--light-text-color);
+    padding: 80px 0; /* Mais espaçamento vertical */
+    text-align: center;
+    /* Opcional: Adicionar uma imagem de fundo ou gradiente aqui */
+    /* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-background.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+.hero-section h1 {
+    font-family: var(--font-headings); /* 13. Fonte de título */
+    font-size: clamp(2.5em, 5vw, 3.5em); /* 14. Tamanho de fonte responsivo */
+    margin-bottom: 20px;
+    color: var(--accent-color); /* Cor de destaque para o título principal */
+}
+
+.hero-section .subtitle {
+    font-size: clamp(1.1em, 2.5vw, 1.3em); /* Tamanho de fonte responsivo */
+    margin-bottom: 30px;
+    max-width: 600px; /* Limita a largura do subtítulo para melhor leitura */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 15. Estilização de Botões Globais */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #c89473; /* Um tom mais escuro do primário no hover */
+    transform: translateY(-2px); /* Efeito sutil de elevação */
+}
+
+/* ------------------- */
+/* ESTILOS GERAIS DE SEÇÃO */
+/* ------------------- */
+main section {
+    padding: 60px 0; /* Espaçamento vertical padrão para seções */
+    /* Removida a borda inferior padrão para um visual mais limpo, pode ser adicionada seletivamente */
+}
+
+main section:nth-child(even) { /* 16. Diferenciar fundo de seções pares e ímpares (opcional) */
+    background-color: #fff; /* Fundo branco para seções como "Serviços" e "Sobre" */
+}
+
+h2 { /* Título principal de cada seção */
+    font-family: var(--font-headings);
+    font-size: clamp(2em, 4vw, 2.8em);
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-subtitle { /* Subtítulo opcional para seções */
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ------------------- */
+/* SEÇÃO DE SERVIÇOS */
+/* ------------------- */
+/*services-section {
+    /* Herda o fundo da regra main section:nth-child(even) ou pode ter um específico */
+
+
+.services-grid {
+    display: grid; /* 17. Usando CSS Grid para o layout dos cards */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo */
+    gap: 30px; /* Espaçamento entre os cards */
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: #fff; /* Fundo branco para os cards, caso a seção tenha outra cor */
+    border-radius: 8px;
+    box-shadow: var(--shadow); /* 18. Aplicando a sombra definida */
+    overflow: hidden; /* Para que o border-radius da imagem funcione corretamente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 19. Transição para hover */
+    display: flex; /* Para melhor controle do conteúdo interno */
+    flex-direction: column;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.service-image {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; /* 20. Garante que a imagem cubra a área sem distorcer */
+}
+
+.service-content {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante no card */
+}
+
+.service-content h3 {
+    font-family: var(--font-headings);
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.service-content p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ------------------- */
+/* SEÇÃO SOBRE NÓS */
+/* ------------------- */
+/*about-section {
+    /* Herda o fundo da regra main section:nth-child(odd) ou pode ter um específico */
+
+
+.about-section article p {
+    margin-bottom: 15px;
+    line-height: 1.8; /* Leitura mais confortável para blocos de texto maiores */
+    font-size: 1.05em;
+}
+
+.about-section article strong { /* Destacando o nome da barbearia */
+    color: var(--primary-color);
+}
+
+.about-image { /* Estilo para a imagem opcional na seção Sobre */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: var(--shadow);
+}
+
+
+/* ------------------- */
+/* RODAPÉ */
+/* ------------------- */
+.site-footer {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    padding: 40px 0; /* Mais espaçamento */
+    margin-top: 40px; /* Mantido */
+    text-align: center; /* Centraliza o conteúdo no container do rodapé */
+}
+
+.footer-container p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.footer-container .contact-info {
+    font-size: 0.85em;
+    color: var(--accent-color); /* Cor de destaque para informações de contato */
+    margin-top: 15px;
+}
+
+.social-links {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: var(--light-text-color);
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5em; /* Tamanho dos ícones (se usar fontes de ícones) */
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+    color: var(--primary-color);
+}
+
+/* Ícones SVG como exemplo - você precisará dos seus arquivos SVG */
+.social-links img {
+    width: 24px; /* Ajuste o tamanho conforme necessário */
+    height: 24px;
+    vertical-align: middle; /* Alinha melhor os SVGs com texto adjacente, se houver */
+}
+
+
+/* ------------------- */
+/* RESPONSIVIDADE (MEDIA QUERIES) */
+/* ------------------- */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Logo acima, navegação abaixo */
+        align-items: flex-start; /* Alinha itens à esquerda no mobile */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Espaço entre logo e nav no mobile */
+    }
+
+    nav[aria-label="Navegação principal"] {
+        width: 100%; /* Faz a navegação ocupar toda a largura */
+    }
+
+    nav[aria-label="Navegação principal"] ul {
+        flex-direction: column; /* Links em coluna */
+        width: 100%;
+        gap: 0;
+    }
+
+    nav[aria-label="Navegação principal"] ul li a {
+        display: block; /* Links ocupam toda a largura do li */
+        padding: 10px;
+        text-align: center; /* Centraliza texto do link */
+        border-bottom: 1px solid #444; /* Divisor entre links no mobile */
+    }
+
+    nav[aria-label="Navegação principal"] ul li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Para o menu hambúrguer (a funcionalidade de abrir/fechar precisaria de JavaScript) */
+    /* .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    nav[aria-label="Navegação principal"] {
+        display: none; // Escondido por padrão, JS mostraria
+    }
+    nav[aria-label="Navegação principal"].active {
+        display: block;
+    } */
+
+    .hero-section h1 {
+        font-size: 2em;
+    }
+    .hero-section .subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Uma coluna para os cards em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --container-padding: 15px; /* Menos padding lateral em telas muito pequenas */
+    }
+    .hero-section {
+        padding: 60px 0;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* ------------------- */
+/* SEÇÃO DE PROFISSIONAIS (NOVO) */
+/* ------------------- */
+.professionals-section {
+    background-color: var(--background-light); /* Ou #fff se alternar com sections mais escuras */
+}
+
+.professionals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste minmax conforme necessário */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.professional-card {
+    background-color: #fff; /* Fundo do card */
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center; /* Centraliza o conteúdo do card */
+    padding: 25px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.professional-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.professional-image {
+    width: 150px; /* Tamanho da imagem do profissional */
+    height: 150px;
+    border-radius: 50%; /* Deixa a imagem redonda */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    margin-bottom: 20px;
+    border: 3px solid var(--primary-color); /* Borda sutil na cor primária */
+}
+
+.professional-content h3 {
+    font-family: var(--font-headings);
+    color: var(--secondary-color); /* Cor diferente da primária para contraste */
+    font-size: 1.6em;
+    margin-bottom: 8px;
+}
+
+.professional-content p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Ajuste para responsividade da seção de profissionais, se necessário */
+@media (max-width: 560px) {
+    .professionals-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+    .professional-card {
+        padding: 20px 15px;
+    }
+    .professional-image {
+        width: 120px;
+        height: 120px;
+    }
+    .professional-content h3 {
+        font-size: 1.4em;
+    }
+}
